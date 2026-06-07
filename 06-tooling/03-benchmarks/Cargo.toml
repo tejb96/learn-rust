@@ -1,0 +1,11 @@
+[package]
+name = "benchmarks_lesson"
+version = "0.1.0"
+edition = "2021"
+
+[dev-dependencies]
+criterion = { workspace = true }
+
+[[bench]]
+name = "fibonacci"
+harness = false

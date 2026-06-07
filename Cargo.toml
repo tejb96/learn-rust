@@ -1,0 +1,51 @@
+[workspace]
+resolver = "2"
+members = [
+    "01-foundations/01-variables",
+    "01-foundations/02-functions",
+    "01-foundations/03-result-option",
+    "01-foundations/04-vectors-hashmaps",
+    "01-foundations/05-structs-impl",
+    "02-ownership/01-ownership-basics",
+    "02-ownership/02-borrowing",
+    "02-ownership/03-slices",
+    "02-ownership/04-lifetimes",
+    "02-ownership/05-smart-pointers",
+    "03-enums-traits/01-enums-match",
+    "03-enums-traits/02-traits-basics",
+    "03-enums-traits/03-trait-objects",
+    "03-enums-traits/04-generics",
+    "03-enums-traits/05-custom-errors",
+    "04-stdlib/01-strings-formatting",
+    "04-stdlib/02-file-io",
+    "04-stdlib/03-http-client",
+    "04-stdlib/04-serde-json",
+    "04-stdlib/05-iterators-closures",
+    "05-concurrency/01-threads",
+    "05-concurrency/02-channels",
+    "05-concurrency/03-mutex-arc",
+    "05-concurrency/04-scoped-threads",
+    "05-concurrency/05-patterns",
+    "06-tooling/01-testing",
+    "06-tooling/02-workspaces-crates",
+    "06-tooling/02-workspaces-crates/calc-core",
+    "06-tooling/03-benchmarks",
+    "06-tooling/04-cfg-features",
+    "07-projects/01-cli-tool",
+    "07-projects/02-rest-api",
+    "07-projects/03-worker-pool",
+]
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+
+[workspace.dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+tempfile = "3"
+reqwest = { version = "0.12", default-features = false, features = ["blocking", "json"] }
+axum = "0.8"
+tokio = { version = "1", features = ["rt", "macros"] }
+tower = "0.5"
+criterion = "0.5"
